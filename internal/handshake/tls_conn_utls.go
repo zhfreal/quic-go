@@ -119,7 +119,12 @@ func signatureSchemesToStd(in []utls.SignatureScheme) []tls.SignatureScheme {
 }
 
 func (c *utlsQUICConn) Start(ctx context.Context) error { return c.conn.Start(ctx) }
-func (c *utlsQUICConn) Close() error                    { return c.conn.Close() }
+func (c *utlsQUICConn) Close() error {
+	if c == nil || c.conn == nil {
+		return nil
+	}
+	return c.conn.Close()
+}
 
 func (c *utlsQUICConn) HandleData(level tls.QUICEncryptionLevel, data []byte) error {
 	return c.conn.HandleData(utlsEncryptionLevel(level), data)
@@ -201,6 +206,8 @@ func (c *utlsQUICConn) NextEvent() tls.QUICEvent {
 		out.Kind = tls.QUICRejectedEarlyData
 	case utls.QUICHandshakeDone:
 		out.Kind = tls.QUICHandshakeDone
+	case utls.QUICErrorEvent:
+		return newQUICErrorEvent(ev.Err)
 	default:
 		// QUICStoreSession and QUICResumeSession carry a *utls.SessionState that
 		// cannot be converted. They only fire when EnableSessionEvents is set,
@@ -232,6 +239,8 @@ func (c *utlsQUICConn) ConnectionState() tls.ConnectionState {
 		VerifiedChains:              s.VerifiedChains,
 		SignedCertificateTimestamps: s.SignedCertificateTimestamps,
 		OCSPResponse:                s.OCSPResponse,
+		CurveID:                     tls.CurveID(s.CurveID),
+		ECHAccepted:                 s.ECHAccepted,
 	}
 }
 

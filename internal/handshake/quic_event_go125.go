@@ -9,3 +9,9 @@ const quicErrorEvent tls.QUICEventKind = -1
 func extractQUICEventError(tls.QUICEvent) error {
 	return nil
 }
+
+func newQUICErrorEvent(err error) tls.QUICEvent {
+	return tls.QUICEvent{
+		Kind: quicErrorEvent,
+	}
+}
