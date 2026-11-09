@@ -1,7 +1,7 @@
 package handshake
 
 import (
-	utls "github.com/refraction-networking/utls"
+	utls "github.com/metacubex/utls"
 )
 
 // chromeQUICClientHelloSpec returns the TLS ClientHello Chrome sends over QUIC.
