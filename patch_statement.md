@@ -144,3 +144,4 @@ The modifications against original upstream are organized into two principal cat
 | `internal/wire/grease_quic_version.go` | **Added** | **Type 1** | RFC 9368 GREASE version generator. |
 | `integrationtests/self/chrome_parrot_test.go`| **Added** | **Test** | Live integration tests for ChromeParrot handshake, transport parameters, and Ed25519 rejection. |
 | `go.mod` / `go.sum` | **Modified** | **Type 1** | Migrated dependency to `github.com/metacubex/utls v1.8.8` with local replace. |
+

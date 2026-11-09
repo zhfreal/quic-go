@@ -14,7 +14,7 @@ require (
 	golang.org/x/sys v0.47.0
 )
 
-replace github.com/metacubex/utls => github.com/zhfreal/utls v1.9.0-patch11
+replace github.com/metacubex/utls => github.com/zhfreal/utls v1.9.0-patch12
 
 require (
 	github.com/andybalholm/brotli v1.0.6 // indirect
