@@ -3,7 +3,7 @@ module github.com/apernet/quic-go
 go 1.25.0
 
 require (
-	github.com/metacubex/utls v1.8.8
+	github.com/metacubex/utls v1.9.0-patch13
 	github.com/quic-go/go-ossfuzz-seeds v0.1.0
 	github.com/quic-go/qpack v0.6.0
 	github.com/stretchr/testify v1.11.1
@@ -14,7 +14,7 @@ require (
 	golang.org/x/sys v0.47.0
 )
 
-replace github.com/metacubex/utls => github.com/zhfreal/utls v1.9.0-patch12
+replace github.com/metacubex/utls => github.com/zhfreal/utls v1.9.0-patch13
 
 require (
 	github.com/andybalholm/brotli v1.0.6 // indirect

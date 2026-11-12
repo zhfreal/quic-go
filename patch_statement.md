@@ -1,6 +1,6 @@
 # Codebase Change Statement: quic-go
 
-**Current Codebase:** `zhfreal/quic-go` (`main-patched`, Tag: `v0.61.1-patch1` / `v0.61.1+patch1`)  
+**Current Codebase:** `zhfreal/quic-go` (`main-patched`, Tag: `v0.61.1-patch2` / `v0.61.1+patch2`)  
 **Original Upstream Baseline:** `quic-go/quic-go` (`v0.61.0`, Commit `579ee19d261db7a6ec46a5ef4ad4fa8d9e262c82`)  
 **Repository Location:** `./quic-go-mine`  
 **Status:** Production-Ready, Race-Verified (`go test -race ./...` passing 100%)
@@ -143,5 +143,5 @@ The modifications against original upstream are organized into two principal cat
 | `internal/wire/transport_parameters_chrome.go`| **Added** | **Type 1** | Chrome transport parameters marshaler with shuffling and GREASE versioning. |
 | `internal/wire/grease_quic_version.go` | **Added** | **Type 1** | RFC 9368 GREASE version generator. |
 | `integrationtests/self/chrome_parrot_test.go`| **Added** | **Test** | Live integration tests for ChromeParrot handshake, transport parameters, and Ed25519 rejection. |
-| `go.mod` / `go.sum` | **Modified** | **Type 1** | Migrated dependency to `github.com/metacubex/utls v1.8.8` with local replace. |
+| `go.mod` / `go.sum` | **Modified** | **Type 1** | Updated dependency to `github.com/metacubex/utls v1.9.0-patch13` (replaced with `github.com/zhfreal/utls v1.9.0-patch13`). |
 
